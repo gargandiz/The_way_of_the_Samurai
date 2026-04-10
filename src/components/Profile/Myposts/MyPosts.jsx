@@ -12,8 +12,8 @@ const MyPosts = () => {
             </div>
             <div className={s.posts}>
                 <Post massage="Hi, how are you?" likeCount="40"/>
-                <Post massage="what are you doing?" likeCount="50"/>
-                <Post massage="Yow are you going?" likeCount="25"/>
+                <Post massage="What are you doing?" likeCount="50"/>
+                <Post massage="How are you going?" likeCount="25"/>
             </div>
         </div>
     )
