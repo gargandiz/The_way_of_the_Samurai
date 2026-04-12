@@ -11,8 +11,14 @@
 
 }
 
-.dialogsItem .active {
-    color: silver;
+.dialog a {
+    color: white;
+    text-decoration: none;
+}
+
+.dialog a.activeLink {
+    color: chocolate;
+    text-decoration: none;
 }
 
 .messages {
