@@ -5,19 +5,19 @@ import {NavLink} from "react-router-dom";
 const Navbar = () => {
     return <nav className={s.nav}>
         <div className={s.item}>
-            <NavLink to="/profile">Profile</NavLink>
-        </div>
-        <div className={`${s.item} ${s.active}`}>
-            <NavLink to="/dialogs">Dialogs</NavLink>
+            <NavLink to="/profile" className={({isActive})=> isActive ? s.activeLink : ""}>Profile</NavLink>
         </div>
         <div className={s.item}>
-            <NavLink to="/news">News</NavLink>
+            <NavLink to="/dialogs" className={({isActive})=> isActive ? s.activeLink : ""}>Dialogs</NavLink>
         </div>
         <div className={s.item}>
-            <NavLink to="/music">Music</NavLink>
+            <NavLink to="/news" className={({isActive})=> isActive ? s.activeLink : ""}>News</NavLink>
         </div>
         <div className={s.item}>
-            <NavLink to="/settings">Settings</NavLink>
+            <NavLink to="/music" className={({isActive})=> isActive ? s.activeLink : ""}>Music</NavLink>
+        </div>
+        <div className={s.item}>
+            <NavLink to="/settings" className={({isActive})=> isActive ? s.activeLink : ""}>Settings</NavLink>
         </div>
     </nav>
 }
