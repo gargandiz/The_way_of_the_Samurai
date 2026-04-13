@@ -3,29 +3,33 @@ import s from "./Dialogs.module.css"
 import {NavLink} from "react-router-dom";
 
 const Dialogs = () => {
+    const DialogsItem = (props) => {
+        const path = "/dialogs/" + props.id;
+        return <div className={s.dialog + ' ' + s.active}>
+            <NavLink to={path}
+                     className={({isActive}) => isActive ? s.activeLink : ""}> {props.name} </NavLink>
+        </div>
+    }
+
+    const Message = (props) => {
+        return <div className={s.message}>
+            {props.message}
+        </div>
+    }
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>
-                <div className={s.dialog + ' ' + s.active}>
-                    <NavLink to="/dialogs/1" className={({isActive})=> isActive ? s.activeLink : ""}> Viktor </NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/2" className={({isActive})=> isActive ? s.activeLink : ""}> Anna </NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/3" className={({isActive})=> isActive ? s.activeLink : ""}> George </NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/4" className={({isActive})=> isActive ? s.activeLink : ""}> Maria </NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/5" className={({isActive})=> isActive ? s.activeLink : ""}> Alex </NavLink>
-                </div>
+                <DialogsItem name="Viktor" id="1"/>
+                <DialogsItem name="Anna" id="2"/>
+                <DialogsItem name="Maxim" id="3"/>
+                <DialogsItem name="Maria" id="4"/>
+                <DialogsItem name="Valera" id="5"/>
             </div>
             <div className={s.messages}>
-                <div className={s.message}>Hi!</div>
-                <div className={s.message}>How are you?</div>
-                <div className={s.message}>What's going on?</div>
+                <Message message="Hi!"/>
+                <Message message="How are you?"/>
+                <Message message="What's going on?!"/>
             </div>
         </div>
     )
