@@ -5,7 +5,7 @@ const Post = (props) => {
     return (
         <div className={s.item}>
             <img src="https://sm.ign.com/ign_ap/cover/a/avatar-gen/avatar-generations_hugw.jpg"/>
-            {props.massage}
+            {props.message}
             <div>
                 <span>
                     likes {props.likeCount}
