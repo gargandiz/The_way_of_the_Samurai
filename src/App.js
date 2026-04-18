@@ -11,17 +11,17 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 
 const App = (props) => {
-    return (
+            return (
         <BrowserRouter>
             <div className='app-wrapper'>
 
                 <Header/>
-                <Navbar/>
+                <Navbar state={props.state.sidebar}/>
 
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/profile" element={<Profile posts={props.posts}/>}/>
-                        <Route path="/dialogs/:id?" element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
+                        <Route path="/profile" element={<Profile state={props.state.profilePage}/>}/>
+                        <Route path="/dialogs/:id?" element={<Dialogs state={props.state.dialogsPage}/>}/>
                         <Route path="/news" element={<Settings/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>
